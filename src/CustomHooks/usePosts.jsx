@@ -8,6 +8,7 @@ export default function usePosts(queryKey, isEnabled, endPoint) {
     queryFn: getPosts,
     queryKey: [...queryKey],
     enabled: isEnabled,
+    retry: 1,
   });
 
   async function getPosts() {
@@ -17,11 +18,11 @@ export default function usePosts(queryKey, isEnabled, endPoint) {
         headersObjData,
       );
       console.log(data);
-      
+
       return data;
     } catch (err) {
       console.log(err, "From get posts hook");
     }
   }
-  return { data, isLoading, isFetching, isFetched, isError }
+  return { data, isLoading, isFetching, isFetched, isError };
 }

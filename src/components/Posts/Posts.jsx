@@ -17,7 +17,7 @@ export default function Posts() {
     <>
     <AddPost/>
       {isLoading && <LoadingCard/>}
-      {isFetched && data.posts.map((post) => <PostCard key={post._id}  post = {post}/>)}
+      {isFetched && data?.posts?.map((post) => <PostCard key={post._id}  post = {post}/>)}
     </>
   );
 }

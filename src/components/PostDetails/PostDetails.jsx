@@ -6,7 +6,6 @@ import LoadingCard from "../LoadingCard/LoadingCard";
 
 export default function PostDetails() {
   const { id } = useParams();
-  console.log(id);
 
   const { data, isLoading, isFetching, isFetched, isError } = usePosts(
     ["details", id],
@@ -17,6 +16,6 @@ export default function PostDetails() {
 
   return <>
   {isLoading && <LoadingCard/>}
-  {isFetched && <PostCard post = {data.post} />}
+  {isFetched && <PostCard post = {data?.post} />}
   </>;
 }
