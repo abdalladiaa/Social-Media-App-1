@@ -6,7 +6,7 @@ import Registration from "../components/Registration/Registration";
 import Login from "../components/Login/Login";
 import Profile from "../components/Profile/Profile";
 import { createBrowserRouter } from "react-router-dom";
-import Posts from "../components/posts/posts";
+import Posts from "../components/Posts/Posts";;
 import PostDetails from "../components/PostDetails/PostDetails";
 
 export const router = createBrowserRouter([
