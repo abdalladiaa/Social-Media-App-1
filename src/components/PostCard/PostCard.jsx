@@ -24,7 +24,7 @@ export default function PostCard({ post }) {
     try {
       const response = await axios.delete(
         `https://linked-posts.routemisr.com/posts/${postId}`,
-        headersObjData,
+        headersObjData(),
       );
       console.log(response);
       return response;

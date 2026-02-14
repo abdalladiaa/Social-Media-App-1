@@ -2,10 +2,6 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-/**
- * Presentational loading skeleton for a Post Card
- * - لا يحتوي على أي لوجيك، مجرد عرض بصري
- */
 export default function LoadingCard() {
   return (
     <article className="bg-white rounded-3xl shadow-xl p-5 max-w-3xl mx-auto my-5">

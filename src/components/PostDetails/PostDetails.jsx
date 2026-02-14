@@ -16,6 +16,6 @@ export default function PostDetails() {
 
   return <>
   {isLoading && <LoadingCard/>}
-  {isFetched && <PostCard post = {data?.post} />}
+  {isFetched && <PostCard post = {data.post} />}
   </>;
 }

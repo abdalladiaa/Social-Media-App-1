@@ -28,7 +28,7 @@ export default function AddPost() {
       const response = await axios.post(
         "https://linked-posts.routemisr.com/posts",
         formData,
-        headersObjData,
+        headersObjData(),
       );
       console.log(response, "from AddPost");
       reset();

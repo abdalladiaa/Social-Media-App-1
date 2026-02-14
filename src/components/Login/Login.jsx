@@ -39,12 +39,15 @@ export default function Login() {
         setMsg("success");
         localStorage.setItem("token", data.token);
         setToken(data.token)
+        
         navigate("/");
       }
     } catch (err) {
       const serverError =
         err?.response?.data?.error || err.message || "Unknown error";
       setMsg(serverError);
+      console.log(err , "From Login");
+      
     } finally {
       setLoading(false);
     }

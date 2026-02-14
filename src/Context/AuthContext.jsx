@@ -11,22 +11,21 @@ export default function AuthContextProvider({ children }) {
     try {
       const { data } = await axios.get(
         "https://linked-posts.routemisr.com/users/profile-data",
-        headersObjData,
+        headersObjData(),
       );
       console.log(data);
-      setUserData(data.user)
-      
+      setUserData(data.user);
     } catch (err) {
-      console.log(err);
+      console.log(err, "From AuthContext");
     }
   }
 
   useEffect(() => {
-    getLoggedinUserData();
-  }, []);
+    token && getLoggedinUserData();
+  }, [token]);
 
   return (
-    <AuthContext.Provider value={{ token, setToken , userData }}>
+    <AuthContext.Provider value={{ token, setToken, userData }}>
       {children}
     </AuthContext.Provider>
   );

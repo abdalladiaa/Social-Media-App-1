@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useContext } from "react";
-import { headersObjData } from "../../Helper/headersOdj";
 import { AuthContext } from "../../Context/AuthContext";
 import usePosts from "../../CustomHooks/usePosts";
 import PostCard from "../PostCard/PostCard";

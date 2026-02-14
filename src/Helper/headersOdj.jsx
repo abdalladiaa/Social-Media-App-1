@@ -1,5 +1,7 @@
-export const headersObjData = {
-  headers: {
-    token: localStorage.getItem("token"),
-  },
-};
+export function headersObjData() {
+  return {
+    headers: {
+      token: localStorage.getItem("token"),
+    },
+  };
+}

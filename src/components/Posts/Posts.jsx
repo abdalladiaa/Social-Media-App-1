@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
-import { headersObjData } from "../../Helper/headersOdj";
 import usePosts from "../../CustomHooks/usePosts";
 import PostCard from "../PostCard/PostCard";
 import LoadingCard from "../LoadingCard/LoadingCard";
@@ -17,7 +16,7 @@ export default function Posts() {
     <>
     <AddPost/>
       {isLoading && <LoadingCard/>}
-      {isFetched && data?.posts?.map((post) => <PostCard key={post._id}  post = {post}/>)}
+      {data?.posts.map((post) => <PostCard key={post._id}  post = {post}/>)}
     </>
   );
 }

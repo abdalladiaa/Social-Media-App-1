@@ -4,18 +4,11 @@ import React from "react";
 import { headersObjData } from "../Helper/headersOdj";
 
 export default function usePosts(queryKey, isEnabled, endPoint) {
-  const { data, isLoading, isFetching, isFetched, isError } = useQuery({
-    queryFn: getPosts,
-    queryKey: [...queryKey],
-    enabled: isEnabled,
-    retry: 1,
-  });
-
   async function getPosts() {
     try {
       const { data } = await axios.get(
         `https://linked-posts.routemisr.com/${endPoint}`,
-        headersObjData,
+        headersObjData(),
       );
       console.log(data);
 
@@ -24,5 +17,10 @@ export default function usePosts(queryKey, isEnabled, endPoint) {
       console.log(err, "From get posts hook");
     }
   }
+  const { data, isLoading, isFetching, isFetched, isError } = useQuery({
+    queryFn: getPosts,
+    queryKey: [...queryKey],
+    enabled: isEnabled,
+  });
   return { data, isLoading, isFetching, isFetched, isError };
 }
